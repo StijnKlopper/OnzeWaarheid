@@ -2,15 +2,21 @@
   <div id="app">
     <v-app>
       <v-toolbar
-        dark
-        color="light-green darken-1">
-        <v-toolbar-side-icon/>
+        light
+        color="white">
+        <v-btn
+          flat
+          fab>
+          <v-icon x-large="">menu</v-icon>
+        </v-btn>
         <v-toolbar-title>
           <router-link
             to="/"
             tag="span"
             style="cursor: pointer">
-            Onze Waarheid
+            <img
+              src="@/assets/logo.png"
+              height="50px">
           </router-link>
         </v-toolbar-title>
         <v-spacer/>
@@ -65,18 +71,6 @@ export default {
 }
 
 .fade-enter, .fade-leave-active {
-  opacity: 0
-}
-.stay-enter-active, .stay-leave-active {
-  transition-property: opacity;
-  transition-duration: 0s;
-}
-
-.stay-enter-active {
-  transition-delay: 0s;
-}
-
-.stay-enter, .stay-leave-active {
   opacity: 0
 }
 </style>
