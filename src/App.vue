@@ -28,6 +28,12 @@
         </v-toolbar-items>
       </v-toolbar>
       <router-view/>
+      <v-footer
+        class="pa-3"
+        color="light-green darken-1">
+        <v-spacer/>
+        DoDo Gaming © 2018
+      </v-footer>
     </v-app>
   </div>
 </template>
