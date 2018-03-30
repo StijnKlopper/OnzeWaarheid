@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    Welcome to the homepage!
+    Onze Waarheid
   </v-container>
 </template>
 
