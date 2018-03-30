@@ -27,16 +27,25 @@
           </v-btn>
         </v-toolbar-items>
       </v-toolbar>
-      <router-view/>
-      <v-footer
-        class="pa-3"
-        color="light-green darken-1">
-        <v-spacer/>
-        DoDo Gaming © 2018
-      </v-footer>
+      <transition name="fade">
+        <router-view/>
+      </transition>
+      <transition name="stay">
+        <Footer/>
+      </transition>
     </v-app>
   </div>
 </template>
+
+<script>
+import Footer from '@/components/Footer.vue'
+
+export default {
+  components: {
+    Footer
+  }
+}
+</script>
 
 <style lang="scss">
 #app {
@@ -46,5 +55,28 @@
   text-align: center;
   background-image: url("https://img.thedailybeast.com/image/upload/v1492176503/articles/2015/09/30/lawsuit-your-candy-bar-was-made-by-child-slaves/150929-haglage-chocolate-tease_ojn06f.jpg");
 }
+.fade-enter-active, .fade-leave-active {
+  transition-property: opacity;
+  transition-duration: .25s;
+}
 
+.fade-enter-active {
+  transition-delay: .25s;
+}
+
+.fade-enter, .fade-leave-active {
+  opacity: 0
+}
+.stay-enter-active, .stay-leave-active {
+  transition-property: opacity;
+  transition-duration: 0s;
+}
+
+.stay-enter-active {
+  transition-delay: 0s;
+}
+
+.stay-enter, .stay-leave-active {
+  opacity: 0
+}
 </style>
