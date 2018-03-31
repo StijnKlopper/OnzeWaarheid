@@ -10,7 +10,7 @@
         <v-card>
           <v-toolbar
             dark
-            color="primary">
+            color="#ae231f">
             <v-toolbar-title>
               Register
             </v-toolbar-title>
@@ -60,7 +60,7 @@
                     :rules="cpasswordRules"/>
                 </v-form>
                 <v-btn
-                  color="primary"
+                  color="#ae231f"
                   @click="submit">
                   Submit
                 </v-btn>
