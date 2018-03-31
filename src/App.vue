@@ -1,23 +1,30 @@
 <template>
   <div id="app">
     <v-app>
+      <v-navigation-drawer
+        id="drawerid"
+        fixed
+        clipped
+        app
+        v-model="drawer"/>
       <v-toolbar
+        style=""
+        id="toolbar"
+        app
+        clipped-left
         light
         color="white">
         <v-btn
           flat
-          fab>
+          fab
+          @click="drawer = !drawer">
           <v-icon x-large="">menu</v-icon>
         </v-btn>
         <v-toolbar-title>
           <router-link
             to="/"
             tag="span"
-            style="cursor: pointer">
-            <img
-              src="@/assets/logo.png"
-              height="50px">
-          </router-link>
+            style="cursor: pointer"/>
         </v-toolbar-title>
         <v-spacer/>
         <v-toolbar-items>
@@ -33,12 +40,15 @@
           </v-btn>
         </v-toolbar-items>
       </v-toolbar>
-      <transition name="fade">
-        <router-view/>
-      </transition>
-      <transition name="stay">
-        <Footer/>
-      </transition>
+      <v-progress-linear value="50"/>
+      <v-content>
+        <v-container>
+          <transition name="fade">
+            <router-view/>
+          </transition>
+        </v-container>
+      </v-content>
+      <Footer id="footer"/>
     </v-app>
   </div>
 </template>
@@ -47,6 +57,11 @@
 import Footer from '@/components/Footer.vue'
 
 export default {
+  data () {
+    return {
+      drawer: false
+    }
+  },
   components: {
     Footer
   }
@@ -59,7 +74,6 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  background-image: url("https://img.thedailybeast.com/image/upload/v1492176503/articles/2015/09/30/lawsuit-your-candy-bar-was-made-by-child-slaves/150929-haglage-chocolate-tease_ojn06f.jpg");
 }
 .fade-enter-active, .fade-leave-active {
   transition-property: opacity;

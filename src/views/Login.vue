@@ -10,7 +10,7 @@
         <v-card>
           <v-toolbar
             dark
-            color="#ae231f">
+            color="grey darken-4">
             <v-toolbar-title>
               Login
             </v-toolbar-title>
@@ -31,7 +31,6 @@
                     label="Username"
                     hint="At least 5 characters long"
                     type="text"
-                    autofocus
                     clearable
                     required
                     v-model="username"
@@ -60,9 +59,10 @@
                     :rules="cpasswordRules"/>
                 </v-form>
                 <v-btn
-                  color="#ae231f"
+                  dark
+                  color="black"
                   @click="submit">
-                  Submit
+                  Login
                 </v-btn>
               </v-flex>
             </v-layout>
